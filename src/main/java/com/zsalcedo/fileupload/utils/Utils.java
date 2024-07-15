@@ -61,7 +61,7 @@ public class Utils {
                 Person person = new Person();
                 person.setCodigo((int) currentRow.getCell(0).getNumericCellValue());
                 person.setName(currentRow.getCell(1).getStringCellValue());
-                person.setAge(String.valueOf(currentRow.getCell(2).getNumericCellValue()));
+                person.setAge((int) currentRow.getCell(2).getNumericCellValue());
                 person.setEmail(currentRow.getCell(3).getStringCellValue());
                 persons.add(person);
             }

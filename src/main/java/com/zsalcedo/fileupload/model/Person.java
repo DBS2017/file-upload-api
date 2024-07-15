@@ -23,6 +23,6 @@ public class Person {
     private Integer id;
     private Integer codigo;
     private String name;
-    private String age;
+    private Integer age;
     private String email;
 }
