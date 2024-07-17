@@ -28,18 +28,14 @@ public class Utils {
 
     public String getFileExtension(String originalFilename) {
         if (originalFilename != null) {
-            int lastIndex = originalFilename.lastIndexOf('.');
-            if (lastIndex > 0 && lastIndex < originalFilename.length() - 1) {
-                return originalFilename.substring(lastIndex + 1);
-            }
+            int lastIndex = originalFilename.lastIndexOf('.');//ropa.pdf
+            return originalFilename.substring(lastIndex + 1);
         }
         return "";
     }
 
     public boolean isExcelFile(MultipartFile file) {
-        try {
-            Workbook workbook = WorkbookFactory.create(file.getInputStream());
-            workbook.close();
+        try (Workbook workbook = WorkbookFactory.create(file.getInputStream())){
             return true;
         } catch (IOException e) {
             return false;
